@@ -9,9 +9,9 @@ const LandingPage = () => {
     const handleScroll = () => {
       requestAnimationFrame(() => {
         if (bgImageRef.current) {
-          //   const bgHeight = bgImageRef.current.offsetHeight;
-          //   const opacity = Math.min((window.scrollY / bgHeight) * 0.9, 0.9);
-          //   setScrollOpacity(opacity);
+          const bgHeight = bgImageRef.current.offsetHeight;
+          const opacity = Math.min((window.scrollY / bgHeight) * 0.9, 0.9);
+          setScrollOpacity(opacity);
         }
       });
     };
@@ -21,18 +21,16 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative overflow-x-hidden">
       {/* Hero Section */}
-      <div className="relative min-h-screen w-full ">
+      <div className="relative min-h-screen w-screen">
         {/* Background Image */}
         <div
           ref={bgImageRef}
-          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+          className="aspect-ratio absolute inset-0 w- h-full bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: "url('/images/Home.jpg')",
-            width: "100vw",
-            left: "50%",
-            transform: "translateX(-50%)",
+            width: "100%",
             backgroundPosition: "center-top",
           }}
         />
@@ -42,7 +40,7 @@ const LandingPage = () => {
           className="absolute inset-0 bg-black transition-opacity duration-200"
           style={{
             opacity: scrollOpacity,
-            width: "100vw",
+            width: "100%", // Changed from 100vw to 100%
           }}
         />
 
