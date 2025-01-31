@@ -25,7 +25,7 @@ const LandingPage = () => {
       {/* Hero Section */}
       <div className="relative min-h-screen w-screen">
         <div className="container py-10 px-10 mx-0 min-w-full flex flex-col items-center relative z-20">
-          <button className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-bold py-2 px-4 rounded-full w-80 mt-[650px] mr-40 text-xl">
+          <button className="mt-[600px] text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-bold py-2 px-4 rounded-full w-80 text-xl">
             JOIN THE STAMPEDE
           </button>
         </div>
