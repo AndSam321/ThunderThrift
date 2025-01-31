@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   const [scrollOpacity, setScrollOpacity] = useState(0);
-  const bgImageRef = useRef(null);
+  const bgImageRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       requestAnimationFrame(() => {
         if (bgImageRef.current) {
-          const bgHeight = bgImageRef.current.offsetHeight;
+          const bgHeight = bgImageRef.current?.offsetHeight || 0;
           const opacity = Math.min((window.scrollY / bgHeight) * 0.9, 0.9);
           setScrollOpacity(opacity);
         }
@@ -21,60 +21,53 @@ const LandingPage = () => {
   }, []);
 
   return (
-    <div className="relative overflow-x-hidden">
+    <div className="relative overflow-x-hidden max-w-full">
       {/* Hero Section */}
       <div className="relative min-h-screen w-screen">
+        <div className="container py-10 px-10 mx-0 min-w-full flex flex-col items-center relative z-20">
+          <button className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-bold py-2 px-4 rounded-full w-80 mt-[650px] mr-40 text-xl">
+            JOIN THE STAMPEDE
+          </button>
+        </div>
+
         {/* Background Image */}
         <div
           ref={bgImageRef}
-          className="aspect-ratio absolute inset-0 w- h-full bg-cover bg-center bg-no-repeat"
+          className="aspect-ratio absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: "url('/images/Home.jpg')",
-            width: "100%",
-            backgroundPosition: "center-top",
           }}
         />
-
-        {/* Darkening Overlay */}
+        {/* Darkening Effect */}
         <div
           className="absolute inset-0 bg-black transition-opacity duration-200"
           style={{
             opacity: scrollOpacity,
-            width: "100%", // Changed from 100vw to 100%
+            width: "100%",
           }}
         />
-
-        {/* Content */}
-        <div className="absolute bottom-20 w-full text-center text-white">
-          <Link
-            to="/products"
-            className="bg-indigo-600 text-white px-8 py-4 rounded-lg hover:bg-indigo-700 transition duration-300 transform hover:scale-105"
-          >
-            Get Started
-          </Link>
-        </div>
       </div>
 
       {/* About Section */}
       <div className="w-full bg-gray-200 min-h-screen">
         <div className="max-w-7xl mx-auto py-20 px-4">
-          {/* Section Title */}
+          {/* Title */}
           <h2 className="text-4xl font-bold text-center mb-20">
             What is Thunder Thrift?
           </h2>
 
           {/* Content Container */}
           <div className="flex flex-col md:flex-row items-center gap-12">
-            {/* Left side - Image */}
+            {/* Left Side - Image */}
             <div className="md:w-1/2">
               <img
-                src="/images/about-thunder.jpg"
+                src="/images/WhatIsThunderThrift.jpg"
                 alt="Thunder Thrift Store"
                 className="rounded-lg shadow-xl w-full h-auto"
               />
             </div>
 
-            {/* Right side - Bullet Points */}
+            {/* Right Side - Bullet Points */}
             <div className="md:w-1/2 space-y-6">
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
@@ -117,6 +110,61 @@ const LandingPage = () => {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* How It Works Section */}
+      <div className="w-full bg-gray-200 min-h-screen">
+        <div className="max-w-7xl mx-auto py-20 px-4">
+          {/* Section Title */}
+          <h2 className="text-4xl font-bold text-center mb-20">How It Works</h2>
+
+          {/* Content Container */}
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            {/* Left Side - Bullet Points */}
+            <div className="md:w-1/2 space-y-6">
+              <div className="space-y-4">
+                <div className="flex items-start gap-4">
+                  <div className="w-2 h-2 mt-2 rounded-full bg-red-700 flex-shrink-0" />
+                  <p className="text-lg">
+                    <b>Sign up with your Simpson College email</b> to verify
+                    your student status.
+                  </p>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-2 h-2 mt-2 rounded-full bg-red-700 flex-shrink-0" />
+                  <p className="text-lg">
+                    <b>List your items</b> for sale or browse the marketplace!
+                  </p>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-2 h-2 mt-2 rounded-full bg-red-700 flex-shrink-0" />
+                  <p className="text-lg">
+                    <b>Chat securely with buyers and sellers</b> to arrange
+                    transactions.
+                  </p>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-2 h-2 mt-2 rounded-full bg-red-700 flex-shrink-0" />
+                  <p className="text-lg">
+                    <b>Meet on campus</b> for easy and safe exchanges.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side - Image */}
+            <div className="md:w-1/2">
+              <img
+                src="/images/howitworks.jpeg"
+                alt="How It Works"
+                className="rounded-lg shadow-xl w-full h-auto"
+              />
             </div>
           </div>
         </div>

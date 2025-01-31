@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Search,
-  ShoppingBag,
   Menu,
   UserCircle2,
   ShoppingCart,
