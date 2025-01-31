@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   const [scrollOpacity, setScrollOpacity] = useState(0);
@@ -25,7 +25,7 @@ const LandingPage = () => {
       {/* Hero Section */}
       <div className="relative min-h-screen w-screen">
         <div className="container py-10 px-10 mx-0 min-w-full flex flex-col items-center relative z-20">
-          <button className="mt-[600px] text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-bold py-2 px-4 rounded-full w-80 text-xl">
+          <button className="mt-[650px] text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-bold py-2 px-4 rounded-full w-80 text-xl">
             JOIN THE STAMPEDE
           </button>
         </div>
@@ -72,7 +72,7 @@ const LandingPage = () => {
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
                   <div className="w-2 h-2 mt-2 rounded-full bg-red-700 flex-shrink-0" />
-                  <p className="text-lg">
+                  <p className="font-roboto text-lg">
                     <b>
                       Thunder Thrift is Simpson College's student-exclusive
                       thrift marketplace
@@ -84,7 +84,7 @@ const LandingPage = () => {
 
                 <div className="flex items-start gap-4">
                   <div className="w-2 h-2 mt-2 rounded-full bg-red-700 flex-shrink-0" />
-                  <p className="text-lg">
+                  <p className="font-roboto text-lg">
                     <b>Designed to promote sustainability</b>, Thunder Thrift
                     encourages students to repurpose their belongings, reducing
                     waste and fostering a circular economy on campus.
@@ -93,7 +93,7 @@ const LandingPage = () => {
 
                 <div className="flex items-start gap-4">
                   <div className="w-2 h-2 mt-2 rounded-full bg-red-700 flex-shrink-0" />
-                  <p className="text-lg">
+                  <p className="font-roboto text-lg">
                     <b>A secure, student-verified marketplace</b>, ensuring all
                     transactions take place within a reliable and safe network
                     of Simpson College students.
@@ -102,7 +102,7 @@ const LandingPage = () => {
 
                 <div className="flex items-start gap-4">
                   <div className="w-2 h-2 mt-2 rounded-full bg-red-700 flex-shrink-0" />
-                  <p className="text-lg">
+                  <p className="font-roboto text-lg">
                     <b>Convenient and community-driven</b>, Thunder Thrift makes
                     it easy for students to find affordable essentials, from
                     textbooks to dorm decor, while supporting a culture of reuse

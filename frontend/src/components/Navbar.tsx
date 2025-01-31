@@ -34,7 +34,7 @@ function Navbar() {
               <a
                 key={category}
                 href="#"
-                className="text-gray-100 hover:text-simpson-gold transition-colors duration-200"
+                className="font-roboto text-gray-100 hover:text-simpson-gold transition-colors duration-200"
               >
                 {category}
               </a>
@@ -47,7 +47,7 @@ function Navbar() {
               <input
                 type="text"
                 placeholder="Search items..."
-                className="w-full px-4 py-2 rounded-full bg-opacity-50 bg-white/10 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-simpson-gold"
+                className="font-roboto w-full px-4 py-2 rounded-full bg-opacity-50 bg-white/10 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-simpson-gold"
               />
               <Search className="absolute right-3 top-2.5 h-5 w-5 text-gray-300" />
             </div>
