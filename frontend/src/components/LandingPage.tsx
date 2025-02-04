@@ -1,4 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
+// import { Chart } from "chart.js";
+
 // import { Link } from "react-router-dom";
 
 const LandingPage = () => {
@@ -22,7 +24,7 @@ const LandingPage = () => {
 
   return (
     <div className="relative overflow-x-hidden max-w-full">
-      {/* Hero Section */}
+      {/* JumboTron Section */}
       <div className="relative min-h-screen w-screen">
         <div className="container py-10 px-10 mx-0 min-w-full flex flex-col items-center relative z-20">
           <button className="mt-[650px] text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-bold py-2 px-4 rounded-full w-80 text-xl">
@@ -52,7 +54,7 @@ const LandingPage = () => {
       <div className="w-full bg-gray-200 min-h-screen">
         <div className="max-w-7xl mx-auto py-20 px-4">
           {/* Title */}
-          <h2 className="text-4xl font-bold text-center mb-20">
+          <h2 className="font-roboto text-4xl font-bold text-center mb-20">
             What is Thunder Thrift?
           </h2>
 
@@ -116,17 +118,19 @@ const LandingPage = () => {
       </div>
 
       {/* How It Works Section */}
-      <div className="w-full bg-gray-200 min-h-screen">
+      <div className="w-full bg-gray-200 min-h-screen -mt-40">
         <div className="max-w-7xl mx-auto py-20 px-4">
           {/* Section Title */}
-          <h2 className="text-4xl font-bold text-center mb-20">How It Works</h2>
+          <h2 className="font-roboto text-4xl font-bold text-center mb-20">
+            How It Works
+          </h2>
 
           {/* Content Container */}
-          <div className="flex flex-col md:flex-row items-center gap-12">
+          <div className="flex flex-col md:flex-row items-center gap-12 -mt-10">
             {/* Left Side - Bullet Points */}
             <div className="md:w-1/2 space-y-6">
               <div className="space-y-4">
-                <div className="flex items-start gap-4">
+                <div className="font-roboto flex items-start gap-4">
                   <div className="w-2 h-2 mt-2 rounded-full bg-red-700 flex-shrink-0" />
                   <p className="text-lg">
                     <b>Sign up with your Simpson College email</b> to verify
@@ -134,14 +138,14 @@ const LandingPage = () => {
                   </p>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="font-roboto flex items-start gap-4">
                   <div className="w-2 h-2 mt-2 rounded-full bg-red-700 flex-shrink-0" />
                   <p className="text-lg">
                     <b>List your items</b> for sale or browse the marketplace!
                   </p>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="font-roboto flex items-start gap-4">
                   <div className="w-2 h-2 mt-2 rounded-full bg-red-700 flex-shrink-0" />
                   <p className="text-lg">
                     <b>Chat securely with buyers and sellers</b> to arrange
@@ -149,7 +153,7 @@ const LandingPage = () => {
                   </p>
                 </div>
 
-                <div className="flex items-start gap-4">
+                <div className="font-roboto flex items-start gap-4">
                   <div className="w-2 h-2 mt-2 rounded-full bg-red-700 flex-shrink-0" />
                   <p className="text-lg">
                     <b>Meet on campus</b> for easy and safe exchanges.
@@ -167,6 +171,14 @@ const LandingPage = () => {
               />
             </div>
           </div>
+        </div>
+      </div>
+      <div className="w-full bg-gray-200 min-h-screen -mt-40">
+        <div className="max-w-7xl mx-auto py-20 px-4">
+          {/* Section Title */}
+          <h2 className="font-roboto text-4xl font-bold text-center mb-20">
+            Student Testimonials:
+          </h2>
         </div>
       </div>
     </div>
