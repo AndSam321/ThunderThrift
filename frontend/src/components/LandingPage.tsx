@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-// import { Chart } from "chart.js";
+import BarChart from "./BarChart.tsx";
 
 // import { Link } from "react-router-dom";
 
@@ -179,6 +179,12 @@ const LandingPage = () => {
           <h2 className="font-roboto text-4xl font-bold text-center mb-20">
             Student Testimonials:
           </h2>
+          {/* Chart Section */}
+          <div className="flex justify-center">
+            <div className="w-full md:w-2/3 lg:w-1/2">
+              <BarChart />
+            </div>
+          </div>
         </div>
       </div>
     </div>
