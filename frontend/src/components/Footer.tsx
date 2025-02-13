@@ -24,7 +24,10 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a href="#" className="hover:text-gray-300 flex items-center gap-2">
+            <a
+              href="mailto:andsam321@gmail.com"
+              className="hover:text-gray-300 flex items-center gap-2"
+            >
               <Mail size={20} /> Contact
             </a>
           </li>

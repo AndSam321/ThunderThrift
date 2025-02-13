@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Search,
   Menu,
   UserCircle2,
   ShoppingCart,
   CloudLightning,
+  LogOut,
 } from "lucide-react";
 
 const categories = [
@@ -16,6 +18,22 @@ const categories = [
 ];
 
 function Navbar() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check if user is logged in
+    const accessToken = localStorage.getItem("accessToken");
+    setIsLoggedIn(!!accessToken);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
+    setIsLoggedIn(false);
+    navigate("/");
+  };
+
   return (
     <nav className="bg-simpson-red shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-4">
@@ -24,7 +42,7 @@ function Navbar() {
           <div className="flex items-center space-x-2">
             <CloudLightning className="h-8 w-8 text-simpson-gold" />
             <span className="text-2xl font-bold text-simpson-gold">
-              ThunderThrift
+              <Link to="/">ThunderThrift</Link>
             </span>
           </div>
 
@@ -53,11 +71,33 @@ function Navbar() {
             </div>
           </div>
 
-          {/* Login */}
-          <button className="flex items-center space-x-2 bg-simpson-gold text-simpson-red px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors duration-200">
-            <UserCircle2 className="h-5 w-5" />
-            <span>Login</span>
-          </button>
+          {/* Auth Buttons */}
+          {isLoggedIn ? (
+            <div className="flex items-center space-x-4">
+              <Link
+                to="/profile"
+                className="flex items-center space-x-2 text-simpson-gold hover:text-white transition-colors duration-200"
+              >
+                <UserCircle2 className="h-6 w-6" />
+                <span>Profile</span>
+              </Link>
+              <button
+                onClick={handleLogout}
+                className="flex items-center space-x-2 bg-simpson-gold text-simpson-red px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors duration-200"
+              >
+                <LogOut className="h-5 w-5" />
+                <span>Logout</span>
+              </button>
+            </div>
+          ) : (
+            <Link
+              to="/login"
+              className="flex items-center space-x-2 bg-simpson-gold text-simpson-red px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors duration-200"
+            >
+              <UserCircle2 className="h-5 w-5" />
+              <span>Login</span>
+            </Link>
+          )}
 
           {/* Menu Button */}
           <button className="md:hidden text-simpson-gold">
