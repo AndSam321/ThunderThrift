@@ -82,7 +82,7 @@ class MicrosoftCallbackView(APIView):
                 status=status.HTTP_403_FORBIDDEN,
             )
 
-        # Get or create user
+        # User Creation
         user, created = User.objects.get_or_create(
             email=email,
             defaults={
@@ -92,7 +92,7 @@ class MicrosoftCallbackView(APIView):
             },
         )
 
-        # Generate JWT token
+        # JWT token
         refresh = RefreshToken.for_user(user)
         
         # Redirect to frontend with token
