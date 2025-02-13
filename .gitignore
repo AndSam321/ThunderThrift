@@ -34,3 +34,6 @@ media
 
 # macOS
 .DS_Store
+
+# Environment Variables
+backend/.env
