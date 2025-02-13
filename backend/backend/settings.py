@@ -66,13 +66,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'backend.urls'
@@ -150,3 +150,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
+
+MICROSOFT_AUTH_CLIENT_ID = os.getenv('MICROSOFT_AUTH_CLIENT_ID')
+MICROSOFT_AUTH_CLIENT_SECRET = os.getenv('MICROSOFT_AUTH_CLIENT_SECRET')
+MICROSOFT_AUTH_TENANT_ID = os.getenv('MICROSOFT_AUTH_TENANT_ID')
+MICROSOFT_AUTH_CALLBACK_URL = os.getenv('MICROSOFT_AUTH_CALLBACK_URL')
+FRONTEND_URL = os.getenv('FRONTEND_URL')
