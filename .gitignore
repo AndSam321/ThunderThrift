@@ -38,4 +38,4 @@ media
 # Environment Variables
 backend/.env
 
-frontend/.bolt/
+.bolt/
